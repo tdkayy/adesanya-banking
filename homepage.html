@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adesanya Banking</title>
+  <link rel="stylesheet" href="homepage.css">
+</head>
+
+<body>
+  <div class="menu">
+    <button class="menu-button">Home</button>
+    <button class="menu-button">Find a Branch</button>
+    <button class="menu-button" id="registerButton">Register</button>
+    <button class="menu-button" id="loginButton">Login</button>
+  </div>
+
+  <header>
+    <h1>Adesanya Banking Corp</h1>
+    <p>Trusted Partners of Expensify</p>
+  </header>
+
+  <div class="hero-image">
+    <div class="hero-text">
+      <h1>Personal Banking</h1>
+      <p>Making Finances easier than ABC</p>
+      <button>Get started now</button>
+    </div>
+  </div>
+
+  <div class="icon-container">
+    <div class="icon">
+      <img src="mortgage.jpg" alt="Icon 1">
+      <p>Mortgages and Loans</p>
+    </div>
+    <div class="icon">
+      <img src="isa.jpg" alt="Icon 2">
+      <p>Explore ISA</p>
+    </div>
+    <div class="icon">
+      <img src="savings.jpg" alt="Icon 3">
+      <p>Manage Your Savings</p>
+    </div>
+    <div class="icon">
+      <img src="fraud.jpg" alt="Icon 4">
+      <p>Fraud and Security</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <h2>Our Services</h2>
+    <div class="features">
+      <div class="feature">
+        <h3>Personal Banking</h3>
+        <p>Manage your accounts, transfer funds, and more.</p>
+      </div>
+      <div class="feature">
+        <h3>Loans and Mortgages</h3>
+        <p>Get the funding you need for your dreams.</p>
+      </div>
+      <div class="feature">
+        <h3>Investment</h3>
+        <p>Grow your wealth with expert financial advice.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2023 Adesanya Banking. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const loginButton = document.getElementById('loginButton');
+
+    loginButton.addEventListener('click', function () {
+      // Redirect to the login page
+      window.location.href = 'login.html';
+    });
+  </script>
+
+  <script>
+    const registerButton = document.getElementById('registerButton');
+
+    registerButton.addEventListener('click', function () {
+      // Redirect to the registration page
+      window.location.href = 'registration.html';
+    });
+  </script>
+</body>
+
+</html>

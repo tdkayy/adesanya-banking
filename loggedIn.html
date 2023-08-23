@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank App - Logged In</title>
+    <link rel="stylesheet" href="loggedIn.css">
+</head>
+
+<body>
+    <header>
+
+        <nav>
+            <div class="logo">
+                <img src="bank.jpg" alt="Bank Logo">
+            </div>
+            <div class="menu">
+                <button class="nav-button" id="homeButton">Home</button>
+                <button class="nav-button" id="accountsButton">Accounts</button>
+                <button class="nav-button" id="transactionsButton">Transactions</button>
+                <button class="nav-button" id="settingsButton">Settings</button>
+                <button class="nav-button" id="logoutButton">Logout</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="dashboard">
+            <h1>Welcome </h1>
+            <p>Your account balance: </p>
+        </div>
+
+        <section id="account-details">
+            <h3>Account Details</h3>
+
+            <div id="account-number"></div>
+
+            <div id="sort-code"></div>
+
+            <div id="balance"></div>
+
+        </section>
+
+            <div class="icon-container">
+                <div class="icon">
+                    <img src="mortgage.jpg" alt="Icon 1">
+                    <p>Mortgates and Loans</p>
+                </div>
+                <div class="icon">
+                    <img src="isa.jpg" alt="Icon 2">
+                    <p>Explore ISA</p>
+                </div>
+                <div class="icon">
+                    <img src="savings.jpg" alt="Icon 3">
+                    <p>Manage Your Savings</p>
+                </div>
+                <div class="icon">
+                    <img src="fraud.jpg" alt="Icon 4">
+                    <p>Fraud and Security</p>
+                </div>
+            </div>
+        
+            <div class="large-box">
+                <p>This is a large box with more content.</p>
+            </div>
+        
+
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Adesanya Banking. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // get references to the buttons
+        const homeButton = document.getElementById('homeButton');
+        const accountsButton = document.getElementById('accountsButton');
+        const transactionsButton = document.getElementById('transactionsButton');
+        const settingsButton = document.getElementById('settingsButton');
+        const logoutButton = document.getElementById('logoutButton');
+
+        // event listeners
+        homeButton.addEventListener('click', function () {
+            // redirect to the home page
+            window.location.href = 'homepage.html';
+        });
+
+        accountsButton.addEventListener('click', function () {
+            // redirect to the accounts page
+            window.location.href = 'accounts.html';
+        });
+
+        transactionsButton.addEventListener('click', function () {
+            // redirect to the transactions page
+            window.location.href = 'transactions.html';
+        });
+
+        settingsButton.addEventListener('click', function () {
+            // redirect to the settings page
+            window.location.href = 'settings.html';
+        });
+
+        logoutButton.addEventListener('click', function () {
+            // redirect to the homepage
+            window.location.href = 'homepage.html';
+        });
+    </script>
+
+    <script>
+
+        // fetch account data from API
+        async function fetchAccount() {
+
+            const response = await fetch('/api/account');
+            const account = await response.json();
+
+            return account;
+
+        }
+
+        async function main() {
+
+            const account = await fetchAccount();
+
+            // insert dynamic values
+            accountNumber.textContent = `Number: ${account.number}`;
+            sortCode.textContent = `Sort Code: ${account.sortCode}`;
+            balance.textContent = `Balance: $${account.balance}`;
+
+        }
+
+        main();
+    </script>
+</body>
+
+</html>

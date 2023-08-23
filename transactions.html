@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bank Transaction Page</title>
+    <link rel="stylesheet" href="transactions.css">
+</head>
+<body>
+
+    <div id="transactionTable">
+        <h1>Transactions</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Transaction Date</th>
+                    <th>Description</th>
+                    <th>Transaction Amount (£)</th>
+                </tr>
+            </thead>
+            <tbody id="transactionTableBody">
+                <!-- Transactions will be added dynamically using JavaScript -->
+            </tbody>
+        </table>
+    </div>
+
+    <div id="transactionForm">
+        <h2>Create New Transaction</h2>
+        <form id="addTransactionForm">
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" required>
+            <label for="description">Description:</label>
+            <input type="text" id="description" name="description" required>
+            <label for="amount">Amount ($):</label>
+            <input type="number" id="amount" name="amount" step="0.01" required>
+            <button type="submit">Add</button>
+        </form>
+    </div>
+
+    <script type="text/javascript" src="transactions.js"></script>
+</body>
+</html>

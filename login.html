@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adesanya Login</title>
+    <link rel="stylesheet" href="login.css">
+    <button id="backButton" type="button">Back</button>
+
+</head>
+
+
+<body>
+    <div class="login-container">
+        <img src="bank.jpg" alt="Adesanya" width="100">
+        <form class="login-form" action="#">
+            <label for="username">Username or Email</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Log In</button>
+            <p>Forgot password? <a href="#">Reset it</a></p>
+        </form>
+    </div>
+    <script>
+        const loginButton = document.getElementById('loginButton');
+
+        loginButton.addEventListener('click', function () {
+            // Redirect to the 'logged in' page
+            window.location.href = 'loggedIn.html';
+        });
+    </script>
+
+    <script>
+        const backButton = document.getElementById('backButton');
+
+        backButton.addEventListener('click', function () {
+            // Redirect to the home page
+            window.location.href = 'homepage.html';
+        });
+    </script>
+
+    <script>
+        // User data array
+        const users = [
+            {
+                username: 'john',
+                password: '123'
+            },
+            {
+                username: 'jane',
+                password: '456'
+            }
+        ];
+
+        // Get login form elements  
+        const form = document.querySelector('.login-form');
+        const usernameInput = document.getElementById('username');
+        const passwordInput = document.getElementById('password');
+
+        // Submit handler
+        function handleLogin(event) {
+
+            // Prevent default submit
+            event.preventDefault();
+
+            // Get input values
+            const username = usernameInput.value;
+            const password = passwordInput.value;
+
+            // Validate input
+            const user = users.find(u => u.username === username && u.password === password);
+
+            if (user) {
+                // Login successful
+                window.location.href = 'loggedIn.html';
+            } else {
+                // Show error 
+                const errorMsg = document.createTextNode('Invalid username or password');
+                form.appendChild(errorMsg);
+            }
+
+        }
+
+        // Attach submit handler 
+        form.addEventListener('submit', handleLogin);
+    </script>
+
+</body>
+
+</html>
