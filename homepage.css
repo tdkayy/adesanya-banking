@@ -1,10 +1,12 @@
-.body, h1, h2, h3, p, label, button {
+/* default margin and padding for common elements */
+body, h1, h2, h3, p, label, button {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
+    box-sizing: border-box;
 }
 
-/* body styles */
+/* main body styles */
 .body {
     display: flex;
     flex-direction: column;
@@ -12,14 +14,10 @@
     justify-content: center;
     min-height: 100vh;
     background-color: #f2f2f2;
+    margin: 0;
 }
 
-/* full-height containers for body and html */
-.body, html {
-    height: 100%;
-}
-
-/* background image for personal banking */
+/* background image for hero section */
 .hero-image {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("expensify.jpg");
     height: 50vh;
@@ -39,6 +37,7 @@
     color: white;
 }
 
+/* header menu */
 .menu {
     display: flex;
     justify-content: flex-end;
@@ -60,10 +59,7 @@
     background-color: #0056b3;
 }
 
-.menu-button:last-child {
-    margin-right: 0; 
-}
-
+/* header */
 header {
     background-color: #007BFF;
     color: white;
@@ -71,6 +67,7 @@ header {
     text-align: center;
 }
 
+/* main content container */
 .container {
     max-width: 1200px;
     margin: 20px auto;
@@ -78,6 +75,7 @@ header {
     text-align: center;
 }
 
+/* features section */
 .features {
     display: flex;
     justify-content: space-around;
@@ -87,25 +85,15 @@ header {
 .feature {
     text-align: center;
 }
-/*style for 4 icon adverts*/
-.body {
-    font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-}
 
+/* icon advertisements */
 .icon-container {
     display: flex;
-    flex-wrap: wrap; /* allow icons to wrap on smaller screens */
-    justify-content: space-around;
-    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center; /* centre icons horizontally */
+    align-items: center; /* centre icons vertically */
     max-width: 1200px;
-    margin-top: 20px;
+    margin: 20px auto;
 }
 
 .icon {
@@ -116,10 +104,9 @@ header {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     transition: transform 0.2s;
     flex: 1;
-    max-width: calc(25% - 20px); /* distribute equally with spacing */
-    width: 100%; /* adjust to 100% width */
-    box-sizing: border-box; /* ensure padding doesn't affect width */
-    margin: 10px; /* add margin for spacing between icons */
+    max-width: calc(25% - 20px);
+    box-sizing: border-box;
+    margin: 10px;
 }
 
 .icon img {
@@ -132,8 +119,32 @@ header {
     font-weight: bold;
 }
 
+/* footer */
 footer {
     background-color: #f4f4f4;
     padding: 10px;
     text-align: center;
+}
+
+/* Responsive styles for mobile devices */
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+
+    .features {
+        flex-direction: column; /* Stack features vertically on smaller screens */
+    }
+
+    .feature {
+        margin: 10px 0; /* Add spacing between stacked features */
+    }
+
+    .icon-container {
+        margin: 10px auto; /* Adjust margin for smaller screens */
+    }
+
+    .icon {
+        max-width: 100%; /* Occupy full width on smaller screens */
+    }
 }
