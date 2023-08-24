@@ -1,11 +1,12 @@
-/* style for login form */
+/* Resetting default margin and padding for common elements */
 body, h1, h2, h3, p, label, button {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
+    box-sizing: border-box; /* Include padding and border in the element's total width/height */
 }
 
-/* body styles */
+/* Body styles */
 body {
     background-color: #f2f2f2;
     margin: 0;
@@ -16,15 +17,17 @@ body {
     min-height: 100vh;
 }
 
+/* Login container */
 .login-container {
     background-color: white;
     border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     padding: 40px;
     width: 400px;
     text-align: center;
 }
 
+/* Login form styles */
 .login-form label {
     display: block;
     margin-bottom: 10px;
@@ -34,7 +37,7 @@ body {
 
 .login-form input[type="text"],
 .login-form input[type="password"] {
-    width: 100%;
+    width: 85%;
     padding: 10px;
     margin-bottom: 20px;
     border: 1px solid #ccc;
@@ -49,7 +52,7 @@ body {
     border-radius: 5px;
     padding: 10px 15px;
     cursor: pointer;
-    width: 100%;
+    width: 40%;
     font-weight: bold;
     transition: background-color 0.3s ease-in-out;
 }
@@ -83,8 +86,41 @@ body {
     cursor: pointer;
     font-weight: bold;
     transition: background-color 0.3s ease-in-out;
+    
+    /* position the button */
+    position: absolute;
+    top: 20px; /* adjust the distance from the top */
+    left: 20px; /* adjust the distance from the left */
 }
 
 #backButton:hover {
     background-color: #0056b3;
+}
+
+/* Responsive styles for mobile devices */
+@media screen and (max-width: 768px) {
+    .login-container {
+        padding: 20px; /* Adjust padding for smaller screens */
+        width: 90%; /* Adjust width for smaller screens */
+    }
+
+    .login-form label {
+        font-size: 14px; /* Adjust font size for smaller screens */
+    }
+
+    .login-form input[type="text"],
+    .login-form input[type="password"] {
+        font-size: 14px; /* Adjust font size for smaller screens */
+    }
+
+    .login-form button {
+        padding: 8px 12px; /* Adjust padding for smaller screens */
+        font-size: 14px; /* Adjust font size for smaller screens */
+    }
+
+    #backButton {
+        padding: 8px 12px; /* Adjust padding for smaller screens */
+        top: 10px; /* Adjust distance from the top for smaller screens */
+        left: 10px; /* Adjust distance from the left for smaller screens */
+    }
 }

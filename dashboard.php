@@ -1,8 +1,8 @@
 <?php
-session_start();
+/*session_start();
 
 if (!isset($_SESSION['username'])) {
-    header('Location: homepage2.html'); // Redirect to login if not authenticated
+    header('Location: loggedIn.html'); // Redirect to login if not authenticated
     exit();
 }
 
@@ -18,5 +18,7 @@ $username = $_SESSION['username'];
 <body>
     <h1>Welcome, <?php echo $username; ?>!</h1>
     <p><a href="logout.php">Logout</a></p>
+    
 </body>
 </html>
+*/

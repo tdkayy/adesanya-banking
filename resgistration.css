@@ -1,3 +1,4 @@
+/* Default styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -9,20 +10,24 @@ body {
     background-color: #f7f7f7;
 }
 
+/* Registration form container */
 .registration-container {
     background-color: #ffffff;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    padding: 40px;
-    width: 400px;
+    padding: 20px; /* Adjust padding for smaller screens */
+    width: 100%; /* Occupy full width on smaller screens */
+    max-width: 400px;
     text-align: center;
 }
 
+/* Heading */
 h1 {
-    margin-bottom: 20px;
+    margin-bottom: 15px; /* Adjust margin for smaller screens */
     color: #333;
 }
 
+/* Form styling */
 form {
     text-align: left;
 }
@@ -36,25 +41,50 @@ label {
 
 input {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
+    padding: 8px; /* Adjust padding for smaller screens */
+    margin-bottom: 15px; /* Adjust margin for smaller screens */
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
+/* Button styling */
 button {
     background-color: #007bff;
     color: white;
     border: none;
     border-radius: 5px;
     position: relative;
-    padding: 10px 20px;
+    padding: 8px 15px; /* Adjust padding for smaller screens */
     cursor: pointer;
-    width: 40%;
+    width: 100%; /* Occupy full width on smaller screens */
+    max-width: 200px;
     font-weight: bold;
     transition: background-color 0.3s;
 }
 
 button:hover {
     background-color: #0056b3;
+}
+
+/* Responsive styles for mobile devices */
+@media screen and (max-width: 768px) {
+    .registration-container {
+        padding: 15px; /* Adjust padding for smaller screens */
+        max-width: 100%; /* Occupy full width on smaller screens */
+    }
+
+    h1 {
+        font-size: 24px; /* Adjust font size for smaller screens */
+        margin-bottom: 10px; /* Adjust margin for smaller screens */
+    }
+
+    input {
+        padding: 6px; /* Adjust padding for smaller screens */
+        margin-bottom: 10px; /* Adjust margin for smaller screens */
+    }
+
+    button {
+        padding: 6px 12px; /* Adjust padding for smaller screens */
+        max-width: 150px; /* Adjust max-width for smaller screens */
+    }
 }

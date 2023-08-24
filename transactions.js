@@ -50,14 +50,14 @@ addTransactionForm.addEventListener('submit', addTransaction);
 displayTransactions();
 
 // API endpoint URL
-const apiUrl = 'https://www.expensify.com/api?command=Authenticate'; 
+const apiUrl = 'https://www.expensify.com/api?command=Authenticate';
 
 // API key
-const apiKey = '7787237r';
+const apiKey = 'd7c3119c6cdab02d68d9';
 
 const headers = {
     'Content-Type': 'application/json',
-    'Authorization': `7787237r ${apiKey}`
+    'Authorization': `d7c3119c6cdab02d68d9 ${apiKey}`
 };
 
 const requestData = {
@@ -69,13 +69,18 @@ fetch(apiUrl, {
     headers: headers,
     body: JSON.stringify(requestData)
 })
-.then(response => response.json())
-.then(data => {
-    console.log('API Response:', data);
-    // Handle the response data here
-})
-.catch(error => {
-    console.error('API Error:', error);
-    // Handle the error here
-});
+    .then(response => response.json())
+    .then(data => {
+        console.log('API Response:', data);
+        // Handle the response data here
+    })
+    .catch(error => {
+        console.error('API Error:', error);
+        // method that attempts to display an error message to the user
+        const errorMessage = document.createElement('p');
+        errorMessage.textContent = 'An error occurred while processing your request. Please try again later.';
+        errorMessage.style.color = 'red';
+        document.body.appendChild(errorMessage);
+
+  
 
