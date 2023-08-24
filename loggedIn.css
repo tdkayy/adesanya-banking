@@ -163,121 +163,56 @@ button[type="submit"]:hover {
     align-items: center;
     min-height: 100vh;
 }
-/* default margin and padding for common elements */
-body, h1, h2, p, ul, li, div {
-    margin: 0;
-    padding: 0;
-}
 
-/* set default font styles */
-body {
-    font-family: Arial, sans-serif;
-}
-
-/* header and navigation styles */
-header {
-    background-color: #004d99;
-    color: white;
-    padding: 10px 0;
-    text-align: center;
-}
-
-nav {
+.icon-container {
     display: flex;
-    flex-direction: column; /* Stack navigation vertically on smaller screens */
-    align-items: center; /* Center navigation items vertically */
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-nav .logo img {
-    max-width: 70px;
-    height: auto;
-    margin-bottom: 10px; /* Add spacing for smaller screens */
-}
-
-.menu {
-    display: flex;
-    flex-direction: column; /* Stack menu buttons vertically on smaller screens */
-}
-
-.nav-button {
-    background-color: #0066cc;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    margin: 5px 0; /* Add spacing between stacked menu buttons */
-    cursor: pointer;
-    border-radius: 4px;
-    transition: background-color 0.3s;
-}
-
-/* main content styles */
-main {
-    padding: 20px 0; /* Adjust padding for smaller screens */
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.dashboard {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-/* account details styles */
-#account-details {
-    padding: 10px; /* Adjust padding for smaller screens */
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    margin-top: 10px; /* Adjust margin for smaller screens */
-}
-
-/* footer styles */
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-}
-
-/* center and style the dashboard content */
-.dashboard h1 {
-    margin-bottom: 5px; /* Adjust margin for smaller screens */
-}
-
-.dashboard p {
-    font-size: 16px; /* Adjust font size for smaller screens */
-}
-
-/* custom styles for form elements */
-form {
-    max-width: 100%; /* Occupy full width on smaller screens */
-    margin: 0 auto;
-    padding: 10px; /* Adjust padding for smaller screens */
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-input[type="text"],
-input[type="password"] {
+    justify-content: space-around;
     width: 100%;
-    padding: 8px; /* Adjust padding for smaller screens */
-    margin-bottom: 10px; /* Adjust margin for smaller screens */
-    font-size: 14px; /* Adjust font size for smaller screens */
+    max-width: 1200px;
+    margin-top: 20px;
 }
 
-button[type="submit"] {
-    background-color: #0066cc;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 8px 15px; /* Adjust padding for smaller screens */
-    font-size: 14px; /* Adjust font size for smaller screens */
-    cursor: pointer;
-    transition: background-color 0.3s;
+.icon {
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+    flex: 1;
+    max-width: calc(25% - 20px); /* distribute equally with spacing */
+    box-sizing: border-box; /* ensure padding doesn't affect width */
 }
+
+.icon img {
+    max-width: 100%;
+    height: auto;
+}
+
+.icon p {
+    margin-top: 10px;
+    font-weight: bold;
+}
+/* existing styles for icon boxes (same as before) */
+
+.large-box {
+    text-align: center;
+    padding: 150px;
+    margin-top: 20px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    max-width: 1200px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Additional styles for the large box */
+.large-box p {
+    font-size: 18px;
+    font-weight: bold;
+}
+
 
 /* responsive styles for mobile devices */
 @media screen and (max-width: 768px) {
@@ -356,4 +291,5 @@ button[type="submit"] {
     font-size: 18px;
     font-weight: bold;
 }
+
 
