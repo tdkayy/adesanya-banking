@@ -42,29 +42,29 @@
 
         </section>
 
-            <div class="icon-container">
-                <div class="icon">
-                    <img src="mortgage.jpg" alt="Icon 1">
-                    <p>Mortgates and Loans</p>
-                </div>
-                <div class="icon">
-                    <img src="isa.jpg" alt="Icon 2">
-                    <p>Explore ISA</p>
-                </div>
-                <div class="icon">
-                    <img src="savings.jpg" alt="Icon 3">
-                    <p>Manage Your Savings</p>
-                </div>
-                <div class="icon">
-                    <img src="fraud.jpg" alt="Icon 4">
-                    <p>Fraud and Security</p>
-                </div>
+        <div class="icon-container">
+            <div class="icon">
+                <img src="mortgage.jpg" alt="Icon 1">
+                <p>Mortgates and Loans</p>
             </div>
-        
-            <div class="large-box">
-                <p>This is a large box with more content.</p>
+            <div class="icon">
+                <img src="isa.jpg" alt="Icon 2">
+                <p>Explore ISA</p>
             </div>
-        
+            <div class="icon">
+                <img src="savings.jpg" alt="Icon 3">
+                <p>Manage Your Savings</p>
+            </div>
+            <div class="icon">
+                <img src="fraud.jpg" alt="Icon 4">
+                <p>Fraud and Security</p>
+            </div>
+        </div>
+
+        <div class="large-box">
+            <p>This is a large box with more content.</p>
+        </div>
+
 
     </main>
 
@@ -81,34 +81,33 @@
         const logoutButton = document.getElementById('logoutButton');
 
         // event listeners
-        homeButton.addEventListener('click', function () {
+        homeButton.addEventListener('click', function() {
             // redirect to the home page
             window.location.href = 'homepage.html';
         });
 
-        accountsButton.addEventListener('click', function () {
+        accountsButton.addEventListener('click', function() {
             // redirect to the accounts page
             window.location.href = 'accounts.html';
         });
 
-        transactionsButton.addEventListener('click', function () {
+        transactionsButton.addEventListener('click', function() {
             // redirect to the transactions page
             window.location.href = 'transactions.html';
         });
 
-        settingsButton.addEventListener('click', function () {
+        settingsButton.addEventListener('click', function() {
             // redirect to the settings page
             window.location.href = 'settings.html';
         });
 
-        logoutButton.addEventListener('click', function () {
+        logoutButton.addEventListener('click', function() {
             // redirect to the homepage
             window.location.href = 'homepage.html';
         });
     </script>
 
     <script>
-
         // fetch account data from API
         async function fetchAccount() {
 

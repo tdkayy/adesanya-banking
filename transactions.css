@@ -1,12 +1,22 @@
 /* Reset default browser styles */
-body, h1, h2, p, label, button, input, table {
+
+body,
+h1,
+h2,
+p,
+label,
+button,
+input,
+table {
     margin: 0;
     padding: 0;
     border: 0;
     font-family: Arial, sans-serif;
 }
 
+
 /* Body styles */
+
 .body {
     background-color: #f2f2f2;
     display: flex;
@@ -15,7 +25,9 @@ body, h1, h2, p, label, button, input, table {
     min-height: 100vh;
 }
 
+
 /* Transaction Table styles */
+
 #transactionTable {
     margin-bottom: 40px;
 }
@@ -48,7 +60,9 @@ tbody td {
     text-align: center;
 }
 
+
 /* Transaction Form styles */
+
 #transactionForm {
     text-align: center;
 }
@@ -98,4 +112,54 @@ button {
 
 button:hover {
     background-color: #0056b3;
+}
+
+
+/* responsive styles for mobile devices */
+
+@media screen and (max-width: 768px) {
+    #transactionTable h1 {
+        font-size: 24px;
+        /* Adjust font size for smaller screens */
+    }
+    table {
+        font-size: 14px;
+        /* Adjust font size for smaller screens */
+    }
+    thead th {
+        padding: 8px;
+        /* Adjust padding for smaller screens */
+    }
+    tbody td {
+        padding: 8px;
+        /* Adjust padding for smaller screens */
+    }
+    #transactionForm h2 {
+        font-size: 24px;
+        /* Adjust font size for smaller screens */
+    }
+    form {
+        padding: 10px;
+        /* Adjust padding for smaller screens */
+    }
+    label {
+        font-size: 14px;
+        /* Adjust font size for smaller screens */
+    }
+    input[type="date"],
+    input[type="text"],
+    input[type="number"] {
+        padding: 10px;
+        /* Adjust padding for smaller screens */
+        margin-bottom: 10px;
+        /* Adjust margin for smaller screens */
+        font-size: 14px;
+        /* Adjust font size for smaller screens */
+    }
+    button {
+        padding: 8px;
+        /* Adjust padding for smaller screens */
+        width: 80%;
+        /* Adjust width for smaller screens */
+    }
 }

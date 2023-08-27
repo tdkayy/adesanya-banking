@@ -1,24 +1,94 @@
-// Example transaction data (you can replace this with actual data)
-const transactions = [];
+// Reusable function for making API requests
+async function makeApiRequest(url, method, data) {
+    const headers = {
+        'Content-Type': 'application/json',
+        'Authorization': 'd7c3119c6cdab02d68d9', // API key
+    };
+
+    try {
+        const response = await fetch(url, {
+            method: method,
+            headers: headers,
+            body: JSON.stringify(data),
+        });
+
+        if (!response.ok) {
+            throw new Error(`API request failed with status: ${response.status}`);
+        }
+
+        return await response.json();
+    } catch (error) {
+        console.error('API Error:', error);
+        throw error;
+    }
+}
+
+// Function to get transactions from API
+async function getTransactions(authToken) {
+    const apiUrl = 'https://www.expensify.com/api?command=Get';
+    const requestData = {
+        type: 'getTransactions',
+        authToken: authToken,
+    };
+
+    try {
+        const response = await makeApiRequest(apiUrl, 'POST', requestData);
+        return response.transactionList || [];
+    } catch (error) {
+        console.error('Error retrieving transactions:', error);
+        return [];
+    }
+}
+
+// Function to create a new transaction
+async function createTransaction(authToken, date, merchant, amount) {
+    const apiUrl = 'https://www.expensify.com/api?command=CreateTransaction'; // Replace with actual endpoint
+    const transactionData = {
+        type: 'createTransaction',
+        authToken: authToken,
+        created: date,
+        merchant: merchant,
+        amount: amount,
+    };
+
+    try {
+        const response = await makeApiRequest(apiUrl, 'POST', transactionData);
+        return response.transactionID || null;
+    } catch (error) {
+        console.error('Error creating transaction:', error);
+        return null;
+    }
+}
 
 // Function to display transactions in the table
-function displayTransactions() {
-    const tableBody = document.getElementById('transactionTableBody');
-    tableBody.innerHTML = '';
+function displayTransactions(transactions) {
+    const table = document.getElementById('transaction-table');
+    table.innerHTML = ''; // Clear existing table content
 
+    // Create table header
+    const headerRow = table.insertRow();
+    const headers = ['Date', 'Merchant', 'Amount'];
+    headers.forEach(headerText => {
+        const th = document.createElement('th');
+        th.textContent = headerText;
+        headerRow.appendChild(th);
+    });
+
+    // Populate table with transaction data
     transactions.forEach(transaction => {
-        const row = document.createElement('tr');
-        row.innerHTML = `
-            <td>${transaction.date}</td>
-            <td>${transaction.description}</td>
-            <td>$${transaction.amount.toFixed(2)}</td>
-        `;
-        tableBody.appendChild(row);
+        const row = table.insertRow();
+        const dateCell = row.insertCell(0);
+        const merchantCell = row.insertCell(1);
+        const amountCell = row.insertCell(2);
+
+        dateCell.textContent = transaction.date;
+        merchantCell.textContent = transaction.merchant;
+        amountCell.textContent = transaction.amount;
     });
 }
 
 // Function to add a new transaction
-function addTransaction(event) {
+async function addTransaction(event) {
     event.preventDefault();
 
     const dateInput = document.getElementById('date');
@@ -34,8 +104,13 @@ function addTransaction(event) {
         return;
     }
 
-    transactions.push({ date, description, amount });
-    displayTransactions();
+    const authToken = 'yourAuthToken'; // Replace with actual authToken
+    const transactionID = await createTransaction(authToken, date, description, amount);
+    if (transactionID) {
+        const newTransaction = { date, merchant: description, amount };
+        transactions.push(newTransaction);
+        displayTransactions(transactions);
+    }
 
     dateInput.value = '';
     descriptionInput.value = '';
@@ -47,40 +122,5 @@ const addTransactionForm = document.getElementById('addTransactionForm');
 addTransactionForm.addEventListener('submit', addTransaction);
 
 // Initial display of transactions
-displayTransactions();
-
-// API endpoint URL
-const apiUrl = 'https://www.expensify.com/api?command=Authenticate';
-
-// API key
-const apiKey = 'd7c3119c6cdab02d68d9';
-
-const headers = {
-    'Content-Type': 'application/json',
-    'Authorization': `d7c3119c6cdab02d68d9 ${apiKey}`
-};
-
-const requestData = {
-    // Provides any necessary data for the authenticate endpoint
-};
-
-fetch(apiUrl, {
-    method: 'POST',
-    headers: headers,
-    body: JSON.stringify(requestData)
-})
-    .then(response => response.json())
-    .then(data => {
-        console.log('API Response:', data);
-        // Handle the response data here
-    })
-    .catch(error => {
-        console.error('API Error:', error);
-        // method that attempts to display an error message to the user
-        const errorMessage = document.createElement('p');
-        errorMessage.textContent = 'An error occurred while processing your request. Please try again later.';
-        errorMessage.style.color = 'red';
-        document.body.appendChild(errorMessage);
-
-  
-
+const transactions = []; // Example transaction data (replace with actual data)
+displayTransactions(transactions);

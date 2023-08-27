@@ -1,15 +1,26 @@
-/* Reset default browser styles */
-body, h1, h2, p, ul, li, div {
+/* browser styles */
+
+body,
+h1,
+h2,
+p,
+ul,
+li,
+div {
     margin: 0;
     padding: 0;
 }
 
-/* set default font styles */
+
+/* font styles */
+
 body {
     font-family: Arial, sans-serif;
 }
 
+
 /* header and navigation styles */
+
 header {
     background-color: #004d99;
     color: white;
@@ -49,9 +60,12 @@ nav .logo img {
     background-color: #0052a3;
 }
 
+
 /* main content styles */
+
 main {
-    padding: 20px 10px; /* Adjust padding for smaller screens */
+    padding: 20px 10px;
+    /* adjust padding for smaller screens */
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -60,24 +74,32 @@ main {
     text-align: center;
 }
 
+
 /* account details styles */
+
 #account-details {
-    padding: 15px; /* Adjust padding for smaller screens */
+    padding: 15px;
+    /* adjust padding for smaller screens */
     border: 1px solid #ccc;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    margin-top: 15px; /* Adjust margin for smaller screens */
+    margin-top: 15px;
+    /* adjust margin for smaller screens */
 }
 
 #account-details h3 {
-    margin-bottom: 8px; /* Adjust margin for smaller screens */
+    margin-bottom: 8px;
+    /* adjust margin for smaller screens */
 }
 
 #account-details div {
-    margin-bottom: 8px; /* Adjust margin for smaller screens */
+    margin-bottom: 8px;
+    /* adjust margin for smaller screens */
 }
 
+
 /* footer styles */
+
 footer {
     background-color: #333;
     color: white;
@@ -85,22 +107,29 @@ footer {
     padding: 10px 0;
 }
 
+
 /* center and style the dashboard content */
+
 .dashboard {
     text-align: center;
-    margin-bottom: 15px; /* Adjust margin for smaller screens */
+    margin-bottom: 15px;
+    /* adjust margin for smaller screens */
 }
 
 .dashboard h1 {
-    margin-bottom: 8px; /* Adjust margin for smaller screens */
+    margin-bottom: 8px;
+    /* adjust margin for smaller screens */
 }
 
 .dashboard p {
-    font-size: 16px; /* Adjust font size for smaller screens */
+    font-size: 16px;
+    /* adjust font size for smaller screens */
     color: #333;
 }
 
+
 /* additional styling for links */
+
 a {
     color: #0066cc;
     text-decoration: none;
@@ -111,11 +140,15 @@ a:hover {
     color: #0052a3;
 }
 
+
 /* custom styles for form elements */
+
 form {
-    max-width: 90%; /* Adjust max width for smaller screens */
+    max-width: 90%;
+    /* adjust max width for smaller screens */
     margin: 0 auto;
-    padding: 15px; /* Adjust padding for smaller screens */
+    padding: 15px;
+    /* adjust padding for smaller screens */
     border: 1px solid #ccc;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -131,10 +164,12 @@ input[type="text"],
 input[type="password"] {
     width: 100%;
     padding: 10px;
-    margin-bottom: 10px; /* Adjust margin for smaller screens */
+    margin-bottom: 10px;
+    /* adjust margin for smaller screens */
     border: 1px solid #ccc;
     border-radius: 5px;
-    font-size: 14px; /* Adjust font size for smaller screens */
+    font-size: 14px;
+    /* adjust font size for smaller screens */
 }
 
 button[type="submit"] {
@@ -142,8 +177,10 @@ button[type="submit"] {
     color: white;
     border: none;
     border-radius: 5px;
-    padding: 8px 16px; /* Adjust padding for smaller screens */
-    font-size: 14px; /* Adjust font size for smaller screens */
+    padding: 8px 16px;
+    /* adjust padding for smaller screens */
+    font-size: 14px;
+    /* adjust font size for smaller screens */
     cursor: pointer;
     transition: background-color 0.3s;
 }
@@ -152,7 +189,9 @@ button[type="submit"]:hover {
     background-color: #0052a3;
 }
 
+
 /* style for 4 icon adverts */
+
 .body {
     font-family: Arial, sans-serif;
     background-color: #f2f2f2;
@@ -181,7 +220,8 @@ button[type="submit"]:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     transition: transform 0.2s;
     flex: 1;
-    max-width: calc(50% - 30px); /* Adjust width for smaller screens */
+    max-width: calc(50% - 30px);
+    /* adjust width for smaller screens */
     margin: 10px;
     box-sizing: border-box;
 }
@@ -192,15 +232,18 @@ button[type="submit"]:hover {
 }
 
 .icon p {
-    margin-top: 8px; /* Adjust margin for smaller screens */
+    margin-top: 8px;
+    /* adjust margin for smaller screens */
     font-weight: bold;
 }
+
 
 /* existing styles for icon boxes (same as before) */
 
 .large-box {
     text-align: center;
-    padding: 100px; /* Adjust padding for smaller screens */
+    padding: 100px;
+    /* adjust padding for smaller screens */
     margin-top: 20px;
     border-radius: 10px;
     background-color: #ffffff;
@@ -210,9 +253,11 @@ button[type="submit"]:hover {
     box-sizing: border-box;
 }
 
-/* Additional styles for the large box */
+
+/* additional styles for the large box */
+
 .large-box p {
-    font-size: 16px; /* Adjust font size for smaller screens */
+    font-size: 16px;
+    /* adjust font size for smaller screens */
     font-weight: bold;
 }
-

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction Management</title>
+</head>
+
+<body>
+    <h2>Transactions</h2>
+
+    <!-- Form to add a new transaction -->
+    <form id="addTransactionForm">
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required><br>
+
+        <label for="merchant">Merchant:</label>
+        <input type="text" id="merchant" name="merchant" required><br>
+
+        <label for="amount">Amount:</label>
+        <input type="number" id="amount" name="amount" step="0.01" required><br>
+
+        <button type="submit">Add</button>
+    </form>
+
+    <br>
+
+    <!-- Display table of transactions -->
+    <table id="transactionTable">
+        <tr>
+            <th>Date</th>
+            <th>Merchant</th>
+            <th>Amount</th>
+        </tr>
+    </table>
+
+    <script>
+        const addTransactionForm = document.getElementById('addTransactionForm');
+        const transactionTable = document.getElementById('transactionTable');
+
+        addTransactionForm.addEventListener('submit', async function(event) {
+            event.preventDefault();
+
+            const date = document.getElementById('date').value;
+            const merchant = document.getElementById('merchant').value;
+            const amount = document.getElementById('amount').value;
+
+            // Call the CreateTransaction API endpoint and add the new transaction to the table
+            try {
+                const response = await fetch('proxy.php?url=https://www.expensify.com/api?command=CreateTransaction&date=' + date + '&merchant=' + merchant + '&amount=' + amount);
+                const responseData = await response.json();
+
+                // Add the new transaction to the table
+                const newRow = transactionTable.insertRow(-1);
+                const dateCell = newRow.insertCell(0);
+                const merchantCell = newRow.insertCell(1);
+                const amountCell = newRow.insertCell(2);
+                dateCell.textContent = date;
+                merchantCell.textContent = merchant;
+                amountCell.textContent = amount;
+            } catch (error) {
+                console.error('Error adding transaction:', error);
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,12 +1,22 @@
-/* Resetting default margin and padding for common elements */
-body, h1, h2, h3, p, label, button {
+/* sets default margin and padding for common elements */
+
+body,
+h1,
+h2,
+h3,
+p,
+label,
+button {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    box-sizing: border-box; /* Include padding and border in the element's total width/height */
+    box-sizing: border-box;
+    /* include padding and border in the element's total width/height */
 }
 
-/* Body styles */
+
+/* body styles */
+
 body {
     background-color: #f2f2f2;
     margin: 0;
@@ -17,7 +27,9 @@ body {
     min-height: 100vh;
 }
 
-/* Login container */
+
+/* login container */
+
 .login-container {
     background-color: white;
     border-radius: 10px;
@@ -27,7 +39,9 @@ body {
     text-align: center;
 }
 
-/* Login form styles */
+
+/* login form styles */
+
 .login-form label {
     display: block;
     margin-bottom: 10px;
@@ -76,7 +90,9 @@ body {
     text-decoration: underline;
 }
 
+
 /* back button */
+
 #backButton {
     background-color: #007BFF;
     color: white;
@@ -86,41 +102,49 @@ body {
     cursor: pointer;
     font-weight: bold;
     transition: background-color 0.3s ease-in-out;
-    
     /* position the button */
     position: absolute;
-    top: 20px; /* adjust the distance from the top */
-    left: 20px; /* adjust the distance from the left */
+    top: 20px;
+    /* adjust the distance from the top */
+    left: 20px;
+    /* adjust the distance from the left */
 }
 
 #backButton:hover {
     background-color: #0056b3;
 }
 
-/* Responsive styles for mobile devices */
+
+/* responsive styles for mobile devices */
+
 @media screen and (max-width: 768px) {
     .login-container {
-        padding: 20px; /* Adjust padding for smaller screens */
-        width: 90%; /* Adjust width for smaller screens */
+        padding: 20px;
+        /* adjust padding for smaller screens */
+        width: 90%;
+        /* adjust width for smaller screens */
     }
-
     .login-form label {
-        font-size: 14px; /* Adjust font size for smaller screens */
+        font-size: 14px;
+        /* adjust font size for smaller screens */
     }
-
     .login-form input[type="text"],
     .login-form input[type="password"] {
-        font-size: 14px; /* Adjust font size for smaller screens */
+        font-size: 14px;
+        /* adjust font size for smaller screens */
     }
-
     .login-form button {
-        padding: 8px 12px; /* Adjust padding for smaller screens */
-        font-size: 14px; /* Adjust font size for smaller screens */
+        padding: 8px 12px;
+        /* adjust padding for smaller screens */
+        font-size: 14px;
+        /* adjust font size for smaller screens */
     }
-
     #backButton {
-        padding: 8px 12px; /* Adjust padding for smaller screens */
-        top: 10px; /* Adjust distance from the top for smaller screens */
-        left: 10px; /* Adjust distance from the left for smaller screens */
+        padding: 8px 12px;
+        /* adjust padding for smaller screens */
+        top: 10px;
+        /* adjust distance from the top for smaller screens */
+        left: 10px;
+        /* adjust distance from the left for smaller screens */
     }
 }
